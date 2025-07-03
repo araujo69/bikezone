@@ -5,5 +5,6 @@ function sendEmail() {
     message: document.getElementById('mensagem').value,
   }
   emailjs.send('service_rt3yno9', 'template_w5jsxlf', params)
+  alert("Mensagem enviada com sucesso")
 }
 
