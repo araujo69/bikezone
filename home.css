@@ -1,0 +1,100 @@
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background: #222;
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Destaque */
+.destaque {
+    padding: 40px;
+    background: linear-gradient(90deg, #ff6600, #ff3300);
+    color: white;
+}
+
+.destaque h2 {
+    font-size: 32px;
+}
+
+.destaque p {
+    font-size: 18px;
+}
+
+/* Container da moto */
+.moto-container {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Imagem da moto */
+.moto {
+    width: 100%;
+    max-width: 700px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.moto:hover {
+    transform: scale(1.1);
+}
+
+/* Botão interativo */
+button {
+    background: #ff3300;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: #ff3300;
+}
+
+/* Rodapé */
+footer {
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}

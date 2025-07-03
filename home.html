@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike Zone</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bem-vindo ao Mundo das Motas!</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="capacetes.html">Capacetes</a></li>
+                <li><a href="roupa.html">Roupa</a></li>
+                <li><a href="pecas.html">Peças</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="destaque">
+            <h2>A Aventura Começa Aqui!</h2>
+            <p>Descobre as melhores bicicletas, acessórios e roupas para tornar a tua experiência inesquecível.</p>
+        </section>
+
+        <section class="moto-container">
+            <h2>Nova Super Máquina!</h2>
+            <img src="mota.png" alt="Moto Desportiva" class="moto">
+            <p>Potência, estilo e performance como nunca viste antes!</p>
+            <button onclick="mostrarDetalhes()">Ver Mais</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bike Zone. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="home.js">
+        function mostrarDetalhes() {
+            alert("Esta moto combina tecnologia avançada, design aerodinâmico e potência inigualável!");
+        }
+    </script>
+
+</body>
+</html>

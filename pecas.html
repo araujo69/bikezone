@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peças</title>
+    <link rel="stylesheet" href="pecas.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Loja de Bicicletas</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Início</a></li>
+                <li><a href="capacetes.html">Capacetes</a></li>
+                <li><a href="roupa.html">Roupa</a></li>
+                <li><a href="pecas.html">Peças</a></li>
+                <li><a href="contactos.html">Contactos</a></li>
+            </ul>
+        </nav>
+    </header>
+        <!-- Ícone do carrinho -->
+        <div class="carrinho-wrapper">
+            <div class="carrinho-icone" onclick="irParaFinalizar()">
+                🛒
+            </div>
+
+            <!-- Gaveta do carrinho ao passar o mouse -->
+            <div id="carrinho-gaveta" class="carrinho-gaveta">
+                <div class="carrinho-cabecalho">
+                    <h2>Seu Carrinho</h2>
+                </div>
+                <ul id="lista-carrinho"></ul>
+            </div>
+        </div>
+    <main>
+        <h1>Peças</h1>
+        <section class="produtos">
+            <!-- Produto 1 -->
+            <div class="produto">
+                <img src="escape1.png" alt="Escape">
+                <h2>ESCAPE AKRAPOVIC</h2>
+                <p>Escape Akrapovic S-B9SO2-APC</p>
+                <p>Preço: €1139,00</p>
+                <button>Adicionar ao Carrinho</button>
+            </div>
+            <!-- Produto 2 -->
+            <div class="produto">
+                <img src="vela1.png" alt="T-Shirt">
+                <h2>VElA NGK</h2>
+                <p>Vela de Ignição NGK PLUGUES</p>
+                <p>Preço: €19,00</p>
+                <button>Adicionar ao Carrinho</button>
+            </div>
+            <!-- Produto 3 -->
+            <div class="produto">
+                <img src="visor1.png" alt="Visor">
+                <h2>VISOR PUIG</h2>
+                <p>Defletor Puig 20764W</p>
+                <p>Preço: €89,90</p>
+                <button>Adicionar ao Carrinho</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
+    </footer>
+    <script src="pecas.js"></script>
+</body>
+</html>
