@@ -60,7 +60,10 @@
 
       carrinho.forEach(item => {
         const li = document.createElement("li");
-        li.textContent = `${item.nome} - €${item.preco.toFixed(2)}`;
+        li.innerHTML = `
+          <img src="${item.imagem}" alt="${item.nome}" style="width:50px; vertical-align:middle; margin-right:10px; border-radius:4px;">
+          <strong>${item.nome}</strong> - €${item.preco.toFixed(2)}
+        `;
         lista.appendChild(li);
         total += item.preco;
       });
