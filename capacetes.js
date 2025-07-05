@@ -39,8 +39,7 @@ document.querySelectorAll('.produto button').forEach(button => {
     });
 });
 
-
-// 🆕 Função para ordenar produtos na página
+// ✅ Função para ordenar os produtos com base nos critérios selecionados
 function ordenarProdutos() {
     const criterio = document.getElementById("ordenar").value;
     const container = document.querySelector(".produtos-container");
