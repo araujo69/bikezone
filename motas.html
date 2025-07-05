@@ -24,6 +24,21 @@
       </ul>
     </nav>
   </header>
+<!-- Ícone do carrinho -->
+  <div class="carrinho-wrapper">
+    <div class="carrinho-icone" onclick="irParaFinalizar()"> 🛒 </div>
+    <!-- Gaveta do carrinho -->
+    <div id="carrinho-gaveta" class="carrinho-gaveta">
+      <div class="carrinho-cabecalho">
+        <h2>Seu Carrinho</h2>
+        <button onclick="fecharCarrinho()">✖</button>
+      </div>
+      <div class="carrinho-conteudo">
+        <ul id="lista-carrinho"></ul>
+      </div>
+      <button class="btn-finalizar" onclick="irParaFinalizar()">Finalizar Compra</button>
+    </div>
+  </div>
 
   <main>
     <h1>Motas em Destaque</h1>
