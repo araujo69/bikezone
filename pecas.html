@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Peças</title>
-    <link rel="stylesheet" href="pecas.css">
+    <link rel="stylesheet" href="pecas.css" />
+    <script defer src="pecas.js"></script>
 </head>
 <body>
     <header>
@@ -21,42 +22,58 @@
             </ul>
         </nav>
     </header>
-        <!-- Ícone do carrinho -->
-        <div class="carrinho-wrapper">
-            <div class="carrinho-icone" onclick="irParaFinalizar()">
-                🛒
-            </div>
 
-            <!-- Gaveta do carrinho ao passar o mouse -->
-            <div id="carrinho-gaveta" class="carrinho-gaveta">
-                <div class="carrinho-cabecalho">
-                    <h2>Seu Carrinho</h2>
-                </div>
-                <ul id="lista-carrinho"></ul>
+    <!-- Ícone do carrinho -->
+    <div class="carrinho-wrapper">
+        <div class="carrinho-icone" onclick="irParaFinalizar()">🛒</div>
+        <div id="carrinho-gaveta" class="carrinho-gaveta">
+            <div class="carrinho-cabecalho">
+                <h2>Seu Carrinho</h2>
             </div>
+            <ul id="lista-carrinho"></ul>
         </div>
+    </div>
+
     <main>
         <h1>Peças</h1>
-        <section class="produtos">
+
+        <!-- 🔽 Menu de ordenação -->
+        <div class="ordenar-container">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar" onchange="ordenarProdutos()">
+                <option value="padrao">Padrão</option>
+                <option value="nomeAZ">Nome (A - Z)</option>
+                <option value="nomeZA">Nome (Z - A)</option>
+                <option value="precoMenor">Preço (menor > maior)</option>
+                <option value="precoMaior">Preço (maior > menor)</option>
+                <option value="modeloAZ">Modelo (A - Z)</option>
+                <option value="modeloZA">Modelo (Z - A)</option>
+            </select>
+        </div>
+
+        <!-- 🛍️ Produtos com atributos para ordenação -->
+        <section class="produtos-container">
             <!-- Produto 1 -->
-            <div class="produto">
-                <img src="escape1.png" alt="Escape">
+            <div class="produto" data-nome="ESCAPE AKRAPOVIC" data-modelo="S-B9SO2-APC" data-preco="1139.00">
+                <img src="escape1.png" alt="Escape" />
                 <h2>ESCAPE AKRAPOVIC</h2>
                 <p>Escape Akrapovic S-B9SO2-APC</p>
                 <p>Preço: €1139,00</p>
                 <button>Adicionar ao Carrinho</button>
             </div>
+
             <!-- Produto 2 -->
-            <div class="produto">
-                <img src="vela1.png" alt="T-Shirt">
-                <h2>VElA NGK</h2>
+            <div class="produto" data-nome="VELA NGK" data-modelo="PLUGUES" data-preco="19.00">
+                <img src="vela1.png" alt="Vela" />
+                <h2>VELA NGK</h2>
                 <p>Vela de Ignição NGK PLUGUES</p>
                 <p>Preço: €19,00</p>
                 <button>Adicionar ao Carrinho</button>
             </div>
+
             <!-- Produto 3 -->
-            <div class="produto">
-                <img src="visor1.png" alt="Visor">
+            <div class="produto" data-nome="VISOR PUIG" data-modelo="20764W" data-preco="89.90">
+                <img src="visor1.png" alt="Visor" />
                 <h2>VISOR PUIG</h2>
                 <p>Defletor Puig 20764W</p>
                 <p>Preço: €89,90</p>
@@ -64,9 +81,9 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
     </footer>
-    <script src="pecas.js"></script>
 </body>
 </html>
