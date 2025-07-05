@@ -51,7 +51,6 @@ document.querySelectorAll('.produto button').forEach(button => {
   });
 });
 
-// Ordenação dos produtos
 function ordenarProdutos() {
   const criterio = document.getElementById("ordenar").value;
   const container = document.querySelector(".produtos-container");
@@ -78,3 +77,11 @@ function ordenarProdutos() {
 
   produtos.forEach(produto => container.appendChild(produto));
 }
+
+// ✅ Carrinho aparece ao passar o rato
+document.querySelector(".carrinho-wrapper").addEventListener("mouseenter", () => {
+  document.getElementById("carrinho-gaveta").style.display = "flex";
+});
+document.querySelector(".carrinho-wrapper").addEventListener("mouseleave", () => {
+  document.getElementById("carrinho-gaveta").style.display = "none";
+});
