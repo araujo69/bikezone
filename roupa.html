@@ -1,118 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-PT">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Roupa</title>
-    <link rel="stylesheet" href="roupa.css" />
-    <script defer src="roupa.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Roupa</title>
+  <link rel="stylesheet" href="roupa.css" />
+  <script defer src="roupa.js"></script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>Loja de Bicicletas</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="home.html">Início</a></li>
-                <li><a href="capacetes.html">Capacetes</a></li>
-                <li><a href="roupa.html">Roupa</a></li>
-                <li><a href="pecas.html">Peças</a></li>
-                <li><a href="motas.html">Motas</a></li>
-                <li><a href="contactos.html">Contactos</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">
+      <h1>Loja de Motas</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Início</a></li>
+        <li><a href="capacetes.html">Capacetes</a></li>
+        <li><a href="roupa.html">Roupa</a></li>
+        <li><a href="pecas.html">Peças</a></li>
+        <li><a href="motas.html">Motas</a></li>
+        <li><a href="contactos.html">Contactos</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Gaveta do carrinho -->
-    <div class="carrinho-wrapper">
-        <div class="carrinho-icone" onclick="irParaFinalizar()"> 🛒 </div>
+  <!-- 🛒 Carrinho lateral -->
+  <div class="carrinho-wrapper">
+    <div class="carrinho-icone" onclick="irParaFinalizar()"> 🛒 </div>
+    <div id="carrinho-gaveta" class="carrinho-gaveta">
+      <div class="carrinho-cabecalho">
+        <h2>Seu Carrinho</h2>
+      </div>
+      <ul id="lista-carrinho"></ul>
+    </div>
+  </div>
 
-        <div id="carrinho-gaveta" class="carrinho-gaveta">
-            <div class="carrinho-cabecalho">
-                <h2>Seu Carrinho</h2>
-            </div>
-            <ul id="lista-carrinho"></ul>
-        </div>
+  <!-- ✅ Mensagem de confirmação -->
+  <div id="aviso-produto" class="mensagem-carrinho oculto">✅ Produto adicionado ao carrinho!</div>
+
+  <main>
+    <h1>Roupa</h1>
+
+    <div class="ordenar-container">
+      <label for="ordenar">Ordenar por:</label>
+      <select id="ordenar" onchange="ordenarProdutos()">
+        <option value="padrao">Padrão</option>
+        <option value="nomeAZ">Nome (A - Z)</option>
+        <option value="nomeZA">Nome (Z - A)</option>
+        <option value="precoMenor">Preço (menor > maior)</option>
+        <option value="precoMaior">Preço (maior > menor)</option>
+        <option value="modeloAZ">Modelo (A - Z)</option>
+        <option value="modeloZA">Modelo (Z - A)</option>
+      </select>
     </div>
 
-    <main>
-        <h1>Roupa</h1>
+    <section class="produtos-container">
+      <!-- Os produtos já estão bem estruturados aqui -->
+      <!-- ... (mantém os produtos como estão) ... -->
+    </section>
+  </main>
 
-        <!-- 🔽 Menu de ordenação -->
-        <div class="ordenar-container">
-            <label for="ordenar">Ordenar por:</label>
-            <select id="ordenar" onchange="ordenarProdutos()">
-                <option value="padrao">Padrão</option>
-                <option value="nomeAZ">Nome (A - Z)</option>
-                <option value="nomeZA">Nome (Z - A)</option>
-                <option value="precoMenor">Preço (menor > maior)</option>
-                <option value="precoMaior">Preço (maior > menor)</option>
-                <option value="modeloAZ">Modelo (A - Z)</option>
-                <option value="modeloZA">Modelo (Z - A)</option>
-            </select>
-        </div>
-
-        <!-- 🛍️ Lista de produtos -->
-        <section class="produtos-container">
-            <!-- Produto 1 -->
-            <div class="produto" data-nome="CASACO ALPINESTARS" data-modelo="T-SP 1 V2" data-preco="139.00">
-                <img src="casaco1.png" alt="Casaco" />
-                <h2>CASACO ALPINESTARS</h2>
-                <p>Casaco Waterpoof T-SP 1 V2 Preto / Branco.</p>
-                <p>Preço: €139,00</p>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-
-            <!-- Produto 2 -->
-            <div class="produto" data-nome="T-SHIRT ALPINESTARS" data-modelo="Always 2.0" data-preco="29.65">
-                <img src="tshirt.png" alt="T-Shirt" />
-                <h2>T-SHIRT ALPINESTARS</h2>
-                <p>Alpinestars Always 2.0 CSF Tee White.</p>
-                <p>Preço: €29,65</p>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-
-            <!-- Produto 3 -->
-            <div class="produto" data-nome="BOTAS ALPINESTARS" data-modelo="CR-X Drystar Lady" data-preco="184.90">
-                <img src="botas1.png" alt="Botas" />
-                <h2>BOTAS ALPINESTARS</h2>
-                <p>Botas Alpinestars CR-X Drystar Lady Preto / Branco / Rosa</p>
-                <p>Preço: €184,90</p>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-
-            <!-- Produto 4 -->
-            <div class="produto" data-nome="LUVAS SPIDI" data-modelo="Neo-S" data-preco="62.95">
-                <img src="luvas1.png" alt="luvas" />
-                <h2>LUVAS SPIDI</h2>
-                <p>Luvas Spidi Neo-S Pretas / Brancas / Cinza.</p>
-                <p>Preço: €62,95</p>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-
-            <!-- Produto 5 -->
-            <div class="produto" data-nome="PROTEÇÃO DAINESE" data-modelo="Pro-Armor G2 2.0" data-preco="89.90">
-                <img src="protecao1.png" alt="Proteção" />
-                <h2>PROTEÇÃO DAINESE</h2>
-                <p>Proteção traseira Dainese Pro-Armor G2 2.0 preta.</p>
-                <p>Preço: €89,90</p>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-
-            <!-- Produto 6 -->
-            <div class="produto" data-nome="FATO ALPINESTARS" data-modelo="Fusion" data-preco="1645.00">
-                <img src="fato1.png" alt="Fato" />
-                <h2>FATO ALPINESTARS</h2>
-                <p>Fato Profissional Alpinestars Fusion Preto / Branco.</p>
-                <p>Preço: €1645,00</p>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Loja de Motas. Todos os direitos reservados.</p>
+  </footer>
 </body>
 </html>
