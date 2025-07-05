@@ -1,58 +1,99 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar Compra</title>
-    <link rel="stylesheet" href="finalizar.css">
-    <script defer src="finalizar.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finalizar Compra</title>
+  <link rel="stylesheet" href="finalizar.css" />
 </head>
 <body>
-    <header>
-        <h1>Finalizar Compra</h1>
-    </header>
+  <header>
+    <h1>Finalizar Compra</h1>
+  </header>
 
-    <main>
-        <section class="resumo-carrinho">
-            <h2>Seu Carrinho</h2>
-            <ul id="lista-finalizar"></ul>
-            <p id="total">Total: €0,00</p>
-        </section>
+  <main>
+    <section class="resumo-carrinho">
+      <h2>Seu Carrinho</h2>
+      <ul id="lista-finalizar"></ul>
 
-        <section class="resumo-carrinho">
-    <h2>Seu Carrinho</h2>
-    <ul id="lista-finalizar"></ul>
-
-    <div class="cupom-container">
+      <div class="cupom-container">
         <label for="cupom">Cupom de Desconto:</label>
-        <input type="text" id="cupom" placeholder="Digite o cupom">
+        <input type="text" id="cupom" placeholder="Digite o cupom" />
         <button type="button" onclick="aplicarCupom()">Aplicar Cupom</button>
-    </div>
+      </div>
 
-    <p id="total">Total: €0,00</p>
-        </section>
+      <p id="total">Total: €0,00</p>
+    </section>
 
-        <section class="formulario">
-            <h2>Dados do Cliente</h2>
-            <form id="form-finalizar">
-                <label>Nome:
-                    <input type="text" name="nome" required>
-                </label>
-                <label>Email:
-                    <input type="email" name="email" required>
-                </label>
-                <label>Endereço:
-                    <input type="text" name="endereco" required>
-                </label>
-                <button type="submit">Finalizar Compra</button>
-            </form>
-            <div id="mensagem-confirmacao" class="oculto">✅ Compra finalizada com sucesso!</div>
-        </section>
+    <section class="formulario">
+      <h2>Dados do Cliente</h2>
+      <form id="form-finalizar">
+        <label>Nome:
+          <input type="text" name="nome" required />
+        </label>
+        <label>Email:
+          <input type="email" name="email" required />
+        </label>
+        <label>Endereço:
+          <input type="text" name="endereco" required />
+        </label>
+        <button type="submit">Finalizar Compra</button>
+      </form>
+      <div id="mensagem-confirmacao" class="oculto">✅ Compra finalizada com sucesso!</div>
+    </section>
+  </main>
 
-    </main>
+  <footer>
+    <p>&copy; 2025 Loja de Bicicletas. Todos os direitos reservados.</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Loja de Bicicletas. Todos os direitos reservados.</p>
-    </footer>
+  <script>
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+    let total = 0;
+    let desconto = 0;
+
+    function atualizarCarrinho() {
+      const lista = document.getElementById("lista-finalizar");
+      const totalEl = document.getElementById("total");
+      lista.innerHTML = "";
+      total = 0;
+
+      carrinho.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.nome} - €${item.preco.toFixed(2)}`;
+        lista.appendChild(li);
+        total += item.preco;
+      });
+
+      const totalComDesconto = total - desconto;
+      totalEl.textContent = `Total: €${totalComDesconto.toFixed(2)}`;
+    }
+
+    function aplicarCupom() {
+      const input = document.getElementById("cupom");
+      const valor = input.value.trim().toUpperCase();
+
+      if (valor === "DESCONTO10") {
+        desconto = total * 0.10;
+        alert("Cupom aplicado: 10% de desconto!");
+      } else {
+        desconto = 0;
+        alert("Cupom inválido.");
+      }
+
+      atualizarCarrinho();
+    }
+
+    document.getElementById("form-finalizar").addEventListener("submit", e => {
+      e.preventDefault();
+      localStorage.removeItem("carrinho");
+      document.getElementById("mensagem-confirmacao").classList.remove("oculto");
+      document.getElementById("form-finalizar").reset();
+      document.getElementById("lista-finalizar").innerHTML = "";
+      document.getElementById("total").textContent = "Total: €0,00";
+    });
+
+    document.addEventListener("DOMContentLoaded", atualizarCarrinho);
+  </script>
 </body>
 </html>
