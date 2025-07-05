@@ -68,20 +68,4 @@ function ordenarProdutos() {
       case "nomeAZ": return nomeA.localeCompare(nomeB);
       case "nomeZA": return nomeB.localeCompare(nomeA);
       case "modeloAZ": return modeloA.localeCompare(modeloB);
-      case "modeloZA": return modeloB.localeCompare(modeloA);
-      case "precoMenor": return precoA - precoB;
-      case "precoMaior": return precoB - precoA;
-      default: return 0;
-    }
-  });
-
-  produtos.forEach(produto => container.appendChild(produto));
-}
-
-// ✅ Carrinho aparece ao passar o rato
-document.querySelector(".carrinho-wrapper").addEventListener("mouseenter", () => {
-  document.getElementById("carrinho-gaveta").style.display = "flex";
-});
-document.querySelector(".carrinho-wrapper").addEventListener("mouseleave", () => {
-  document.getElementById("carrinho-gaveta").style.display = "none";
-});
+      case "modeloZA": return modeloB.localeCompare(model
