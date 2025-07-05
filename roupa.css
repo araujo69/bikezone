@@ -39,7 +39,6 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  justify-content: center;
   max-width: 1000px;
   margin: auto;
 }
@@ -64,6 +63,7 @@ button {
   padding: 10px;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -87,6 +87,7 @@ footer {
   }
 }
 
+/* Responsivo: 1 coluna em telas pequenas */
 @media (max-width: 500px) {
   .produtos-container {
     grid-template-columns: repeat(1, 1fr);
@@ -138,6 +139,7 @@ footer {
   margin: 0;
 }
 
+/* ✅ Itens do carrinho */
 .item-carrinho {
   display: flex;
   align-items: center;
@@ -181,7 +183,7 @@ footer {
   background-color: #005fa3;
 }
 
-/* ✅ Estilo da mensagem de confirmação */
+/* ✅ Mensagem de confirmação */
 .mensagem-carrinho {
   position: fixed;
   top: 20px;
@@ -205,7 +207,7 @@ footer {
   display: none;
 }
 
-/* 🔽 Menu de ordenação */
+/* 🔽 Estilo do seletor de ordenação */
 .ordenar-container {
   margin: 20px auto;
   max-width: 1000px;
