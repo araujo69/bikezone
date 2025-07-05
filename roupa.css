@@ -87,7 +87,6 @@ footer {
   }
 }
 
-/* Responsivo: 1 coluna em telas pequenas */
 @media (max-width: 500px) {
   .produtos-container {
     grid-template-columns: repeat(1, 1fr);
@@ -95,20 +94,16 @@ footer {
 }
 
 /* 🛒 Carrinho lateral */
-.carrinho-icone {
-  position: fixed;
-  top: 15px;
-  right: 20px;
-  font-size: 28px;
-  cursor: pointer;
-  z-index: 1001;
-}
-
 .carrinho-wrapper {
   position: fixed;
   top: 15px;
   right: 20px;
   z-index: 1001;
+}
+
+.carrinho-icone {
+  font-size: 28px;
+  cursor: pointer;
 }
 
 .carrinho-gaveta {
@@ -127,6 +122,7 @@ footer {
 
 .carrinho-wrapper:hover .carrinho-gaveta {
   display: flex;
+  flex-direction: column;
 }
 
 .carrinho-cabecalho {
@@ -134,13 +130,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
-}
-
-.carrinho-cabecalho button {
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
 }
 
 #lista-carrinho {
@@ -156,7 +145,8 @@ footer {
   margin-bottom: 10px;
 }
 
-.item-carrinho img {
+.item-carrinho img,
+.miniatura-carrinho {
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -172,6 +162,23 @@ footer {
 .preco-produto {
   font-size: 14px;
   color: #555;
+}
+
+/* ✅ Botão "Finalizar Compra" */
+.botao-finalizar {
+  background-color: #0078D7;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-finalizar:hover {
+  background-color: #005fa3;
 }
 
 /* ✅ Estilo da mensagem de confirmação */
@@ -207,7 +214,6 @@ footer {
   justify-content: flex-end;
   padding: 0 10px;
   font-size: 16px;
-  font-family: Arial, sans-serif;
   gap: 10px;
 }
 
