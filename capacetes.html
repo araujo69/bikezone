@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -26,7 +27,6 @@
   <!-- Ícone do carrinho -->
   <div class="carrinho-wrapper">
     <div class="carrinho-icone" onclick="irParaFinalizar()"> 🛒 </div>
-    <!-- Gaveta do carrinho -->
     <div id="carrinho-gaveta" class="carrinho-gaveta">
       <div class="carrinho-cabecalho">
         <h2>Seu Carrinho</h2>
@@ -56,35 +56,10 @@
       </select>
     </div>
 
-    <!-- 🛍️ Lista de produtos -->
     <section class="produtos-container">
-      <!-- Novos produtos de capacetes -->
-<div class="produto" data-nome="CAPACETE AGV" data-modelo="K6 S" data-preco="459.90">
-  <img src="k74.png" alt="AGV">
-  <h2>CAPACETE AGV</h2>
-  <p>AGV K6 S Nardo Cinza Fosco</p>
-  <p>Preço: €459,90</p>
-  <button>Adicionar ao Carrinho</button>
-</div>
-
-<div class="produto" data-nome="CAPACETE NOLAN" data-modelo="N100-5 Plus" data-preco="389.00">
-  <img src="k75.png" alt="Nolan">
-  <h2>CAPACETE NOLAN</h2>
-  <p>Nolan N100-5 Plus Classic N-Com Preto</p>
-  <p>Preço: €389,00</p>
-  <button>Adicionar ao Carrinho</button>
-</div>
-
-<div class="produto" data-nome="CAPACETE MT" data-modelo="Thunder 4" data-preco="199.95">
-  <img src="k76.png" alt="MT">
-  <h2>CAPACETE MT</h2>
-  <p>MT Thunder 4 SV Solid Preto Fosco</p>
-  <p>Preço: €199,95</p>
-  <button>Adicionar ao Carrinho</button>
-</div>
-
+      <!-- Produtos existentes -->
       <div class="produto" data-nome="CAPACETE HJC" data-modelo="RPHA 12" data-preco="649.00">
-        <img src="k71.png" alt="HJC">
+        <img src="imagens/k71.png" alt="HJC" />
         <h2>CAPACETE HJC</h2>
         <p>HJC RPHA 12 Quartararo Réplica Capacete Preto MC5</p>
         <p>Preço: €649,00</p>
@@ -92,7 +67,7 @@
       </div>
 
       <div class="produto" data-nome="CAPACETE SHOEI" data-modelo="Neotec 3" data-preco="769.99">
-        <img src="k72.png" alt="SHOEI">
+        <img src="imagens/k72.png" alt="SHOEI" />
         <h2>CAPACETE SHOEI</h2>
         <p>Capacete Shoei Neotec 3 Grasp TC-10</p>
         <p>Preço: €769,99</p>
@@ -100,10 +75,59 @@
       </div>
 
       <div class="produto" data-nome="CAPACETE AIROH" data-modelo="Wraaap 6DAYS" data-preco="189.90">
-        <img src="k73.png" alt="Airoh">
+        <img src="imagens/k73.png" alt="Airoh" />
         <h2>CAPACETE AIROH</h2>
         <p>Capacete Airoh Wraaap 6DAYS Espanha 2024</p>
         <p>Preço: €189,90</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+
+      <!-- Novos capacetes -->
+      <div class="produto" data-nome="CAPACETE AGV" data-modelo="K6 S" data-preco="459.90">
+        <img src="imagens/k74.png" alt="AGV" />
+        <h2>CAPACETE AGV</h2>
+        <p>AGV K6 S Nardo Cinza Fosco</p>
+        <p>Preço: €459,90</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" data-nome="CAPACETE NOLAN" data-modelo="N100-5 Plus" data-preco="389.00">
+        <img src="imagens/k75.png" alt="Nolan" />
+        <h2>CAPACETE NOLAN</h2>
+        <p>Nolan N100-5 Plus Classic N-Com Preto</p>
+        <p>Preço: €389,00</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" data-nome="CAPACETE MT" data-modelo="Thunder 4" data-preco="199.95">
+        <img src="imagens/k76.png" alt="MT" />
+        <h2>CAPACETE MT</h2>
+        <p>MT Thunder 4 SV Solid Preto Fosco</p>
+        <p>Preço: €199,95</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" data-nome="CAPACETE SCORPION" data-modelo="EXO-1400 EVO" data-preco="329.95">
+        <img src="imagens/k77.png" alt="Scorpion" />
+        <h2>CAPACETE SCORPION</h2>
+        <p>Scorpion EXO-1400 EVO Air Preto/Prata</p>
+        <p>Preço: €329,95</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" data-nome="CAPACETE BELL" data-modelo="Qualifier DLX" data-preco="249.00">
+        <img src="imagens/k78.png" alt="Bell" />
+        <h2>CAPACETE BELL</h2>
+        <p>Bell Qualifier DLX MIPS Preto Brilhante</p>
+        <p>Preço: €249,00</p>
+        <button>Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto" data-nome="CAPACETE CABERG" data-modelo="Drift Evo" data-preco="289.90">
+        <img src="imagens/k79.png" alt="Caberg" />
+        <h2>CAPACETE CABERG</h2>
+        <p>Caberg Drift Evo Integra Branco Brilhante</p>
+        <p>Preço: €289,90</p>
         <button>Adicionar ao Carrinho</button>
       </div>
     </section>
