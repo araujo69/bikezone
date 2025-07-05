@@ -1,75 +1,90 @@
 function irParaFinalizar() {
-    window.location.href = "finalizar.html";
-}
-
-function adicionarAoCarrinho(nomeDoProduto, preco, imagemSrc) {
-    const lista = document.getElementById("lista-carrinho");
-
-    const item = document.createElement("li");
-    item.classList.add("item-carrinho");
-
-    item.innerHTML = `
-        <img src="${imagemSrc}" alt="${nomeDoProduto}" class="miniatura-carrinho">
-        <span class="nome-produto">${nomeDoProduto}</span>
-        <span class="preco-produto">€${preco.toFixed(2)}</span>
-    `;
-
-    lista.appendChild(item);
+  window.location.href = "finalizar.html";
 }
 
 function mostrarAvisoProdutoAdicionado() {
-    const aviso = document.getElementById("aviso-produto");
-    aviso.classList.add("mostrar");
+  const aviso = document.getElementById("aviso-produto");
+  aviso.classList.add("mostrar");
 
-    setTimeout(() => {
-        aviso.classList.remove("mostrar");
-    }, 2000); // desaparece após 2 segundos
+  setTimeout(() => {
+    aviso.classList.remove("mostrar");
+  }, 2000);
+}
+
+function guardarNoLocalStorage(nome, preco, imagemSrc) {
+  let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+  carrinho.push({ nome, preco, imagem: imagemSrc });
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+}
+
+function adicionarAoCarrinhoVisual(nome, preco, imagemSrc) {
+  const lista = document.getElementById("lista-carrinho");
+
+  const item = document.createElement("li");
+  item.classList.add("item-carrinho");
+
+  item.innerHTML = `
+    <img src="${imagemSrc}" alt="${nome}" class="miniatura-carrinho">
+    <span class="nome-produto">${nome}</span>
+    <span class="preco-produto">€${preco.toFixed(2)}</span>
+  `;
+
+  lista.appendChild(item);
 }
 
 document.querySelectorAll('.produto button').forEach(button => {
-    button.addEventListener('click', () => {
-        const produto = button.closest('.produto');
-        const nome = produto.querySelector('h2').innerText;
-        const precoTexto = produto.querySelector('p:nth-of-type(2)').innerText;
-        const preco = parseFloat(precoTexto.replace(/[^\d,]/g, '').replace(',', '.'));
-        const imagemSrc = produto.querySelector('img').src;
+  button.addEventListener('click', () => {
+    const produto = button.closest('.produto');
+    const nome = produto.querySelector('h2').innerText;
+    const precoTexto = produto.querySelector('p:nth-of-type(2)').innerText;
+    const preco = parseFloat(precoTexto.replace(/[^\d,]/g, '').replace(',', '.'));
+    const imagemSrc = produto.querySelector('img').src;
 
-        adicionarAoCarrinho(nome, preco, imagemSrc);
-        mostrarAvisoProdutoAdicionado(); // ✅ chamar o aviso aqui
-    });
+    // Adiciona visualmente ao carrinho (se existir)
+    const listaCarrinho = document.getElementById("lista-carrinho");
+    if (listaCarrinho) {
+      adicionarAoCarrinhoVisual(nome, preco, imagemSrc);
+    }
+
+    // Guarda no localStorage para uso em finalizar.html
+    guardarNoLocalStorage(nome, preco, imagemSrc);
+
+    // Mostra aviso
+    mostrarAvisoProdutoAdicionado();
+  });
 });
 
-// ✅ Função para ordenar os produtos com base nos critérios selecionados
+// Ordenação de produtos
 function ordenarProdutos() {
-    const criterio = document.getElementById("ordenar").value;
-    const container = document.querySelector(".produtos-container");
-    const produtos = Array.from(container.children);
+  const criterio = document.getElementById("ordenar").value;
+  const container = document.querySelector(".produtos-container");
+  const produtos = Array.from(container.children);
 
-    produtos.sort((a, b) => {
-        const nomeA = a.dataset.nome || "";
-        const nomeB = b.dataset.nome || "";
-        const modeloA = a.dataset.modelo || "";
-        const modeloB = b.dataset.modelo || "";
-        const precoA = parseFloat(a.dataset.preco) || 0;
-        const precoB = parseFloat(b.dataset.preco) || 0;
+  produtos.sort((a, b) => {
+    const nomeA = a.dataset.nome || "";
+    const nomeB = b.dataset.nome || "";
+    const modeloA = a.dataset.modelo || "";
+    const modeloB = b.dataset.modelo || "";
+    const precoA = parseFloat(a.dataset.preco) || 0;
+    const precoB = parseFloat(b.dataset.preco) || 0;
 
-        switch (criterio) {
-            case "nomeAZ":
-                return nomeA.localeCompare(nomeB);
-            case "nomeZA":
-                return nomeB.localeCompare(nomeA);
-            case "modeloAZ":
-                return modeloA.localeCompare(modeloB);
-            case "modeloZA":
-                return modeloB.localeCompare(modeloA);
-            case "precoMenor":
-                return precoA - precoB;
-            case "precoMaior":
-                return precoB - precoA;
-            default:
-                return 0;
-        }
-    });
+    switch (criterio) {
+      case "nomeAZ":
+        return nomeA.localeCompare(nomeB);
+      case "nomeZA":
+        return nomeB.localeCompare(nomeA);
+      case "modeloAZ":
+        return modeloA.localeCompare(modeloB);
+      case "modeloZA":
+        return modeloB.localeCompare(modeloA);
+      case "precoMenor":
+        return precoA - precoB;
+      case "precoMaior":
+        return precoB - precoA;
+      default:
+        return 0;
+    }
+  });
 
-    produtos.forEach(produto => container.appendChild(produto));
+  produtos.forEach(produto => container.appendChild(produto));
 }
