@@ -23,3 +23,38 @@ document.querySelectorAll('.produto button').forEach(button => {
         adicionarAoCarrinho(nome, preco);
     });
 });
+
+// ✅ Função de ordenação dos produtos
+function ordenarProdutos() {
+    const criterio = document.getElementById("ordenar").value;
+    const container = document.querySelector(".produtos-container");
+    const produtos = Array.from(container.children);
+
+    produtos.sort((a, b) => {
+        const nomeA = a.dataset.nome || "";
+        const nomeB = b.dataset.nome || "";
+        const modeloA = a.dataset.modelo || "";
+        const modeloB = b.dataset.modelo || "";
+        const precoA = parseFloat(a.dataset.preco) || 0;
+        const precoB = parseFloat(b.dataset.preco) || 0;
+
+        switch (criterio) {
+            case "nomeAZ":
+                return nomeA.localeCompare(nomeB);
+            case "nomeZA":
+                return nomeB.localeCompare(nomeA);
+            case "modeloAZ":
+                return modeloA.localeCompare(modeloB);
+            case "modeloZA":
+                return modeloB.localeCompare(modeloA);
+            case "precoMenor":
+                return precoA - precoB;
+            case "precoMaior":
+                return precoB - precoA;
+            default:
+                return 0;
+        }
+    });
+
+    produtos.forEach(produto => container.appendChild(produto));
+}
