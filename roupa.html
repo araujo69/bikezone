@@ -24,15 +24,19 @@
     </nav>
   </header>
 
-  <!-- 🛒 Carrinho lateral com botão -->
+   <!-- Ícone do carrinho -->
   <div class="carrinho-wrapper">
-    <div class="carrinho-icone">🛒</div>
+    <div class="carrinho-icone" onclick="irParaFinalizar()"> 🛒 </div>
+    <!-- Gaveta do carrinho -->
     <div id="carrinho-gaveta" class="carrinho-gaveta">
       <div class="carrinho-cabecalho">
         <h2>Seu Carrinho</h2>
+        <button onclick="fecharCarrinho()">✖</button>
       </div>
-      <ul id="lista-carrinho"></ul>
-      <button class="botao-finalizar" onclick="irParaFinalizar()">Finalizar Compra</button>
+      <div class="carrinho-conteudo">
+        <ul id="lista-carrinho"></ul>
+      </div>
+      <button class="btn-finalizar" onclick="irParaFinalizar()">Finalizar Compra</button>
     </div>
   </div>
 
