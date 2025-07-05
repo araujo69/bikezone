@@ -140,6 +140,7 @@ footer {
     padding: 0;
     margin: 0;
 }
+
 .carrinho-wrapper {
     position: fixed;
     top: 15px;
@@ -173,7 +174,6 @@ footer {
     margin: 0;
 }
 
-
 /* Mostrar gaveta ao passar o rato no ícone */
 .carrinho-icone:hover + .carrinho-gaveta,
 .carrinho-gaveta:hover {
@@ -196,7 +196,6 @@ footer {
     margin-bottom: 10px;
     transition: background-color 0.3s ease;
 }
-
 
 #lista-carrinho img {
     width: 40px;
@@ -252,4 +251,30 @@ footer {
 .aviso-produto.mostrar {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ✅ Estilo do menu de ordenação */
+.ordenar-container {
+    margin: 20px auto;
+    max-width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    gap: 10px;
+}
+
+.ordenar-container label {
+    font-weight: bold;
+}
+
+.ordenar-container select {
+    padding: 6px 12px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
 }
