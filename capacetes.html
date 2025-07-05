@@ -1,4 +1,3 @@
-<!-- bicicletas.html -->
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -26,7 +25,8 @@
 
   <!-- Ícone do carrinho -->
   <div class="carrinho-wrapper">
-    <div class="carrinho-icone" onclick="irParaFinalizar()">🛒</div>
+    <div class="carrinho-icone" onclick="irParaFinalizar()"> 🛒 </div>
+    <!-- Gaveta do carrinho -->
     <div id="carrinho-gaveta" class="carrinho-gaveta">
       <div class="carrinho-cabecalho">
         <h2>Seu Carrinho</h2>
@@ -42,7 +42,7 @@
   <main>
     <h1>Capacetes</h1>
 
-    <!-- 🔽 MENU DE ORDENAÇÃO AQUI -->
+    <!-- 🔽 Menu de ordenação -->
     <div class="ordenar-container">
       <label for="ordenar">Ordenar por:</label>
       <select id="ordenar" onchange="ordenarProdutos()">
@@ -56,29 +56,26 @@
       </select>
     </div>
 
-    <!-- 🔲 PRODUTOS COM data-* ADICIONADOS -->
+    <!-- 🛍️ Lista de produtos -->
     <section class="produtos-container">
-      <!-- Produto 1 -->
       <div class="produto" data-nome="CAPACETE HJC" data-modelo="RPHA 12" data-preco="649.00">
-        <img src="k71.png" alt="HJC" />
+        <img src="k71.png" alt="HJC">
         <h2>CAPACETE HJC</h2>
         <p>HJC RPHA 12 Quartararo Réplica Capacete Preto MC5</p>
         <p>Preço: €649,00</p>
         <button>Adicionar ao Carrinho</button>
       </div>
 
-      <!-- Produto 2 -->
       <div class="produto" data-nome="CAPACETE SHOEI" data-modelo="Neotec 3" data-preco="769.99">
-        <img src="k72.png" alt="SHOEI" />
+        <img src="k72.png" alt="SHOEI">
         <h2>CAPACETE SHOEI</h2>
         <p>Capacete Shoei Neotec 3 Grasp TC-10</p>
         <p>Preço: €769,99</p>
         <button>Adicionar ao Carrinho</button>
       </div>
 
-      <!-- Produto 3 -->
       <div class="produto" data-nome="CAPACETE AIROH" data-modelo="Wraaap 6DAYS" data-preco="189.90">
-        <img src="k73.png" alt="Airoh" />
+        <img src="k73.png" alt="Airoh">
         <h2>CAPACETE AIROH</h2>
         <p>Capacete Airoh Wraaap 6DAYS Espanha 2024</p>
         <p>Preço: €189,90</p>
