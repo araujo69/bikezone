@@ -88,3 +88,19 @@ function ordenarProdutos() {
 
   produtos.forEach(produto => container.appendChild(produto));
 }
+function filtrarProdutos() {
+  const termo = document.getElementById("pesquisa").value.toLowerCase();
+  const produtos = document.querySelectorAll(".produto");
+
+  produtos.forEach(produto => {
+    const nome = produto.querySelector("h2").innerText.toLowerCase();
+    const descricao = produto.querySelector("p").innerText.toLowerCase();
+
+    if (nome.includes(termo) || descricao.includes(termo)) {
+      produto.style.display = "block";
+    } else {
+      produto.style.display = "none";
+    }
+  });
+}
+
