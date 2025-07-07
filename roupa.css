@@ -311,4 +311,103 @@ footer {
 .barra-pesquisa input:focus {
   border-color: #0078d7;
 }
+/* Fundo com imagem */
+body {
+  background-image: url("https://as1.ftcdn.net/jpg/04/46/76/82/1000_F_446768215_MJ5YFEPNSlVTcg3vbEKxvc7dWk6SrDA6.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Camada branca semi-transparente */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: -1;
+}
+
+/* Estilo do formulário */
+.formulario-contacto {
+  max-width: 600px;
+  background-color: white;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.formulario-contacto h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.formulario-contacto label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+input:invalid,
+textarea:invalid {
+  border-color: #dc3545;
+}
+
+input:valid,
+textarea:valid {
+  border-color: #28a745;
+}
+
+.formulario-contacto button {
+  background-color: #0078d7;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.formulario-contacto button:hover {
+  background-color: #005ea3;
+}
+
+/* Estilo da mensagem de sucesso */
+.mensagem-feedback {
+  display: none;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  font-weight: bold;
+  animation: fadeInOut 4s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; display: none; }
+}
 
