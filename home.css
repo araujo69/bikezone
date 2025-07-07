@@ -35,6 +35,61 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+.oque-somos {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 40px auto;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.oque-somos h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.oque-somos p {
+  font-size: 1.1em;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.oque-somos button {
+  background-color: #0078D7;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.oque-somos button:hover {
+  background-color: #005ea8;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .oque-somos {
+    padding: 20px;
+  }
+
+  .oque-somos h2 {
+    font-size: 1.5em;
+  }
+
+  .oque-somos p {
+    font-size: 1em;
+  }
+
+  .oque-somos button {
+    width: 100%;
+  }
+}
 
 /* Destaque */
 .destaque {
