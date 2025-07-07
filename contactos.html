@@ -39,22 +39,49 @@
         <section class="contacto-info">
             <p>Email: xanaxvsf@gmail.com</p>
             <p>Morada: Rua da Escola 123</p>
-        </section>
-        <section class="formulario-contacto">
-            <h2>Envie-nos uma mensagem</h2>
-            <form>
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-                
-                <button type="submit" onclick="sendEmail()">Enviar</button>
-            </form>
-        </section>
+      <section class="formulario-contacto">
+  <h2>Envie-nos uma mensagem</h2>
+  <form id="form-contato">
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="mensagem">Mensagem:</label>
+    <textarea id="mensagem" name="mensagem" required></textarea>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="mensagem-enviada" style="display: none; margin-top: 15px; color: green;">
+    ✅ Mensagem enviada com sucesso!
+  </div>
+</section>
+
+<script>
+  document.getElementById("form-contato").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensagem = document.getElementById("mensagem").value.trim();
+
+    if (!nome || !email || !mensagem) {
+      alert("Por favor, preencha todos os campos obrigatórios.");
+      return;
+    }
+
+    // Aqui podes integrar com um serviço de envio real, como EmailJS ou PHP
+
+    // Mostra mensagem de sucesso
+    document.getElementById("mensagem-enviada").style.display = "block";
+
+    // Limpa o formulário
+    this.reset();
+  });
+</script>
+
     </main>
     <footer>
         <p>&copy; 2025 Sua Empresa. Todos os direitos reservados.</p>
