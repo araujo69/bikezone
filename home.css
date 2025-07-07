@@ -153,3 +153,41 @@ footer {
     padding: 10px;
     margin-top: 20px;
 }
+.reviews {
+  background-color: #ffffff;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  margin: 40px auto;
+  max-width: 900px;
+}
+
+.reviews h2 {
+  font-size: 1.8em;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+.review-card {
+  background-color: #f8f8f8;
+  margin: 20px auto;
+  padding: 20px 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  font-style: italic;
+  color: #444;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+
+.review-card p {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.review-card span {
+  display: block;
+  font-weight: bold;
+  color: #0078d7;
+}
+
