@@ -6,6 +6,9 @@
   <title>Finalizar Compra</title>
   <link rel="stylesheet" href="finalizar.css" />
   <script defer src="finalizar.js"></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
   <header>
@@ -31,23 +34,57 @@
     <section class="formulario">
       <h2>Dados do Cliente</h2>
       <form id="form-finalizar">
-        <label>Nome:
-          <input type="text" name="nome" required />
+        <label for="nome">Nome:
+          <input type="text" id="nome" name="nome" required />
         </label>
-        <label>Email:
-          <input type="email" name="email" required />
+        <label for="email">Email:
+          <input type="email" id="email" name="email" required />
         </label>
-        <label>Endereço:
-          <input type="text" name="endereco" required />
+        <label for="endereco">Endereço:
+          <input type="text" id="endereco" name="endereco" required />
         </label>
         <button type="submit">Finalizar Compra</button>
       </form>
-      <div id="mensagem-confirmacao" class="oculto">✅ Compra finalizada com sucesso!</div>
+
+      <div id="mensagem-confirmacao" style="display: none; margin-top: 15px; color: green;">
+        ✅ Compra finalizada com sucesso!
+      </div>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Loja de Motas. Todos os direitos reservados.</p>
   </footer>
+
+  <script>
+    emailjs.init("BfXByESLCjRrl9902"); // tua Public Key
+
+    document.getElementById("form-finalizar").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const nome = document.getElementById("nome").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const endereco = document.getElementById("endereco").value.trim();
+
+      if (!nome || !email || !endereco) {
+        alert("Por favor, preencha todos os campos obrigatórios.");
+        return;
+      }
+
+      emailjs.send("service_76s0e6w", "template_cq167x7", {
+        nome: nome,
+        email: email,
+        endereco: endereco
+      })
+      .then(() => {
+        document.getElementById("mensagem-confirmacao").style.display = "block";
+        document.getElementById("form-finalizar").reset();
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar:", error);
+        alert("❌ Ocorreu um erro ao finalizar a compra. Tenta novamente mais tarde.");
+      });
+    });
+  </script>
 </body>
 </html>
