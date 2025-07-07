@@ -39,6 +39,20 @@
       <button class="btn-finalizar" onclick="irParaFinalizar()">Finalizar Compra</button>
     </div>
   </div>
+  
+        <!-- 🔽 Menu de ordenação -->
+        <div class="ordenar-container">
+            <label for="ordenar">Ordenar por:</label>
+            <select id="ordenar" onchange="ordenarProdutos()">
+                <option value="padrao">Padrão</option>
+                <option value="nomeAZ">Nome (A - Z)</option>
+                <option value="nomeZA">Nome (Z - A)</option>
+                <option value="precoMenor">Preço (menor > maior)</option>
+                <option value="precoMaior">Preço (maior > menor)</option>
+                <option value="modeloAZ">Modelo (A - Z)</option>
+                <option value="modeloZA">Modelo (Z - A)</option>
+            </select>
+        </div>
 
   <main>
     <h1>Motas em Destaque</h1>
